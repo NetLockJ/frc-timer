@@ -274,7 +274,7 @@ function toggleTeams(resetScores, toggleIcons) {
 }
 
 function changeIcons() {
-  if(matchesJSON != null && matchesJSON.icons != null) {
+  if (matchesJSON != null && matchesJSON.icons != null) {
     red = matchesJSON.icons[matchesJSON["m" + matchNumber].red];
     blue = matchesJSON.icons[matchesJSON["m" + matchNumber].blue];
     redIcon.src = "./team-icons/" + (red == null ? "default-red.svg" : red);
@@ -298,10 +298,10 @@ function toggleScores() {
   } else {
     // update scores in reveal divs
     document.getElementById("red-reveal-points").innerHTML =
-      points[0] - penalties[0];
+      points[0] + penalties[1];
     document.getElementById("red-reveal-penalties").innerHTML = penalties[0];
     document.getElementById("blue-reveal-points").innerHTML =
-      points[1] - penalties[1];
+      points[1] + penalties[0];
     document.getElementById("blue-reveal-penalties").innerHTML = penalties[1];
 
     winnerDiv = document.createElement("div");
@@ -339,7 +339,7 @@ function toggleScores() {
       }
     }
 
-    if(matchesJSON != null) {
+    if (matchesJSON != null) {
       matchesJSON["m" + matchNumber].winner = winner;
     }
 
