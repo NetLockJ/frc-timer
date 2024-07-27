@@ -19,7 +19,7 @@ endgame.preload = "auto";
 teleop.preload = "auto";
 
 // seconds for timer
-var initialTime = 135;
+var initialTime = 150;
 
 /**
  * Times for the "teleop" and "endgame" sounds to play,
