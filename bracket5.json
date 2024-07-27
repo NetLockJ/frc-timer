@@ -1,0 +1,32 @@
+{
+    "bracket": true,
+    "preload": false,
+    "m1" : {
+        "blue": "Alliance 2",
+        "red": "Alliance 3"
+    },
+    "m2" : {
+        "blue": "Alliance 4",
+        "red": "Alliance 5"
+    },
+    "m3": {
+        "red": "Winner of m1",
+        "blue": "Winner of m2"
+    },
+    "m4": {
+        "red": "Loser of m1",
+        "blue" : "Loser of m2"
+    },
+    "m5": {
+        "red": "Alliance 1",
+        "blue": "Winner of m3"
+    },
+    "m6" : {
+        "red": "Loser of m5",
+        "blue": "Winner of m4"
+    },
+    "m7" : {
+        "red": "Winner of m5",
+        "blue": "Winner of m6"
+    }
+}
