@@ -19,14 +19,15 @@ endgame.preload = "auto";
 teleop.preload = "auto";
 
 // seconds for timer
-var initialTime = 135;
+var initialTime = 30 + 90 + 30;
 
 /**
- * Times for the "teleop" and "endgame" sounds to play,
+ * Absolute Times for the various game period sounds to play,
  * if they are null, the sound will not play
  */
 const BUZZER_TIMES = {
-  TELEOP: 120,
+  INITIAL: 30 + 90 + 30,
+  TELEOP: 90 + 30,
   ENDGAME: 30,
 };
 
@@ -149,6 +150,7 @@ function startTimer() {
 
         changeCirclePercent();
 
+        // There is no sound for the initial period, because it begins when the game does.
         if (
           BUZZER_TIMES.TELEOP != null &&
           initialTime - timePassed == BUZZER_TIMES.TELEOP

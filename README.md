@@ -6,7 +6,7 @@ You can access the web version [here](https://netlockj.github.io/frc-timer/).
 
 Use the buttons below the timer circle to start/stop the timer, reset the timer, and upload matches.
 
-<img src="./images/example.png">
+![Project Screenshot](./images/example.png)
 
 ---
 
@@ -36,7 +36,7 @@ When a match file is loaded, a new selector will appear at the top that allows o
 
 Once a match has finished, (when the timer has counted down to zero), clicking the 'r' key on the keyboard will reveal the final scores and the winner. Clicking the 'r' key again will toggle the final scores off. Note that any changes to scoring will not reflect on the final scores unless they are toggled off and back on after being revealed.
 
-<img src="./images/final-reveal.png">
+![Final Review Screenshot](./images/final-reveal.png)
 
 ---
 
