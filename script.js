@@ -19,14 +19,14 @@ endgame.preload = "auto";
 teleop.preload = "auto";
 
 // seconds for timer
-var initialTime = 150;
+var initialTime = 135;
 
 /**
  * Times for the "teleop" and "endgame" sounds to play,
  * if they are null, the sound will not play
  */
 const BUZZER_TIMES = {
-  TELEOP: 120,
+  TELEOP: 105,
   ENDGAME: 30,
 };
 
