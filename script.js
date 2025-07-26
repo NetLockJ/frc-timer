@@ -84,6 +84,7 @@ fileInput.onchange = function () {
       matchesJSON = JSON.parse(reader.result);
       matchNumber = 1;
       loadMatch(matchNumber);
+      createScoreboard();
     } catch (error) {
       alert("Unable to parse file!");
     }
@@ -341,6 +342,28 @@ function toggleScores() {
 
     if (matchesJSON != null) {
       matchesJSON["m" + matchNumber].winner = winner;
+      matchesJSON["m" + matchNumber].rs = points[0] + penalties[1];
+      matchesJSON["m" + matchNumber].bs = points[1] + penalties[0];
+
+      // also update bracket/scoreboard
+      if(winner == "") {
+        document.getElementById("m" + matchNumber + "r").innerHTML = `<span>${points[0] + penalties[1]}</span>`;
+        document.getElementById("m" + matchNumber + "b").innerHTML = `<span>${points[1] + penalties[0]}</span>`;
+      } else if(winner == "red") {
+        document.getElementById("m" + matchNumber + "r").innerHTML = 
+        `<div class="score-content">
+            <span>${points[0] + penalties[1]}</span>
+            <img src="./svg/winner.svg">
+          </div>`;
+        document.getElementById("m" + matchNumber + "b").innerHTML = `<span>${points[1] + penalties[0]}</span>`;
+      } else {
+        document.getElementById("m" + matchNumber + "r").innerHTML = `<span>${points[0] + penalties[1]}</span>`;
+        document.getElementById("m" + matchNumber + "b").innerHTML = `
+        <div class="score-content">
+            <span>${points[1] + penalties[0]}</span>
+            <img src="./svg/winner.svg">
+          </div>`;
+      }
     }
 
     blueReveal.classList.remove("blue-reveal-exit");

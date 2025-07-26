@@ -6,18 +6,25 @@
     <title>FRC Timer</title>
     <link defer rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
+    <script defer src="scoreboard.js"></script>
   </head>
   <body style="background-color: #3b3a3a">
-    <img id="red-icon" class="team-icon" src="team-icons/default-red.svg">
+    <img id="red-icon" class="team-icon" src="team-icons/default-red.svg" />
     <div id="red-score" class="scores red-score-enter"></div>
     <div id="red-penalties" class="display-penalty">0</div>
-    <img id="blue-icon" class="team-icon" src="team-icons/default-blue.svg">
+    <img id="blue-icon" class="team-icon" src="team-icons/default-blue.svg" />
     <div id="blue-score" class="scores blue-score-enter"></div>
     <div id="blue-penalties" class="display-penalty">0</div>
     <div id="match-selector" class="button-row no-matches">
-      <button style="background-image: url(./svg/left.svg);" onclick="if (timePassed == 0) loadMatch(--matchNumber)"></button>
+      <button
+        style="background-image: url(./svg/left.svg)"
+        onclick="if (timePassed == 0) loadMatch(--matchNumber)"
+      ></button>
       <span id="match">Match 1</span>
-      <button style="background-image: url(./svg/right.svg);" onclick=" if(timePassed == 0) loadMatch(++matchNumber)"></button>
+      <button
+        style="background-image: url(./svg/right.svg)"
+        onclick=" if(timePassed == 0) loadMatch(++matchNumber)"
+      ></button>
     </div>
     <div
       id="timer-div"
@@ -59,12 +66,23 @@
           font-family="monospace"
         ></text>
       </svg>
-      <div
-         class="button-row">
-        <button style="background-image: url(./svg/play.svg);" onclick="startTimer()"></button>
-        <button style="background-image: url(./svg/restart.svg);" onclick="resetTimer()"></button>
-        <button style="background-image: url(./svg/upload.svg);" onclick="document.getElementById('file-input').click()"></button>
-        <button style="background-image: url(./svg/pause.svg);" onclick="stopTimer()"></button>
+      <div class="button-row">
+        <button
+          style="background-image: url(./svg/play.svg)"
+          onclick="startTimer()"
+        ></button>
+        <button
+          style="background-image: url(./svg/restart.svg)"
+          onclick="resetTimer()"
+        ></button>
+        <button
+          style="background-image: url(./svg/upload.svg)"
+          onclick="document.getElementById('file-input').click()"
+        ></button>
+        <button
+          style="background-image: url(./svg/pause.svg)"
+          onclick="stopTimer()"
+        ></button>
       </div>
     </div>
     <div id="blue-reveal" class="reveal blue-reveal-exit">
@@ -81,6 +99,18 @@
         <div id="red-reveal-penalties" class="penalties">15</div>
       </div>
     </div>
-    <input id="file-input" type="file" style="display: none;" accept=".json">
+    <input id="file-input" type="file" style="display: none" accept=".json" />
+    <div id="scoreboard" class="scoreboard hidden">
+      <div class="top-table">
+        <div class="scroll-wrapper">
+          <table id="match-table"></table>
+        </div>
+      </div>
+
+      <div class="bottom-table">
+        <table id="team-table">
+        </table>
+      </div>
+    </div>
   </body>
 </html>
