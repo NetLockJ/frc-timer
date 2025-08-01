@@ -401,3 +401,14 @@ td {
 .bottom-table th, .bottom-table td {
   background-color: #4e4e4e;
 }
+
+.tournament {
+  height: 34px;
+  width: 34px;
+
+  position: absolute;
+
+  top: 80%;
+  right: 12px;
+  z-index: 2;
+}

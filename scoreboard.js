@@ -61,6 +61,8 @@ function createScoreboard() {
         }
     }
 
+    teamTable.innerHTML = "";
+
     tr = document.createElement("tr");
     Object.keys(teamMap).forEach(key => {
       th = document.createElement("th");
@@ -104,5 +106,47 @@ function updateTeamScores() {
     Object.keys(teamMap).forEach(key => {
       document.getElementById(key).innerHTML = teamMap[key];
     });
+  }
+}
+
+function createBracket() {
+  if(matchesJSON != null) {
+    if(confirm("Generating bracket will clear all other match data, do you wish to continue?")) {
+      sortedTeams = Object.entries(teamMap).sort((a, b) => b[1] - a[1]);
+
+      matchesJSON = {
+        "m1": {
+          "red": sortedTeams[0][0],
+          "blue": sortedTeams[3][0]
+        },
+        "m2" : {
+          "red": sortedTeams[1][0],
+          "blue": sortedTeams[2][0]
+        }, 
+        "m3" : {
+          "red" : "Winner of m1",
+          "blue": "Winner of m2"
+        },
+        "m4" : {
+          "red": "Winner of m1",
+          "blue": "Winner of m2"
+        },
+        "m5": {
+          "red": "Winner of m1",
+          "blue": "Winner of m2"
+        }
+      }
+
+      resetTimer();
+
+      if(redReveal.classList.contains("red-reveal-enter")) {
+        toggleScores();
+      }
+      
+      matchNumber = 1;
+      loadMatch(matchNumber);
+      toggleScoreboard();
+      createScoreboard();
+    }
   }
 }
