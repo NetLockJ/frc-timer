@@ -412,3 +412,7 @@ td {
   right: 12px;
   z-index: 2;
 }
+
+.hidden {
+  opacity: 0%;
+}

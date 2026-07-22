@@ -142,11 +142,13 @@ function createBracket() {
       if(redReveal.classList.contains("red-reveal-enter")) {
         toggleScores();
       }
-      
+
       matchNumber = 1;
       loadMatch(matchNumber);
       toggleScoreboard();
       createScoreboard();
+
+      document.getElementById("bottom-table").classList.add("hidden");
     }
   }
 }
